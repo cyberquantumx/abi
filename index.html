@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Proxy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+     <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments)
+      };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+        a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108230912', 'ym');
+
+    ym(108230912, 'init', {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: "dataLayer",
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/108230912" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body class="bg-neutral-50 text-black min-h-screen flex flex-col items-baseline justify-baseline select-none">
+    <header class="bg-white border-b border-gray-200 w-full mb-5">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-gray-800">
+                TG Proxy
+                <span class="text-xs text-gray-300">beta</span>
+            </div>
+            <nav class="space-x-6">
+                <a href="t.me/chaingrai" class="text-gray-600 hover:text-black transition">@chaingrai</a>
+
+            </nav>
+        </div>
+    </header>
+    <div class="flex items-center align-middle flex-col w-full" id="container">
+        <div id="proxyContainer" class="proxyContainer mb-8 border border-gray-200 p-3 rounded w-80 flex flex-col justify-items-center items-center bg-white">
+            <h2 class="text-l font-semibold mb-4 p-1 text-center  w-30 rounded">Прокси:</h2>
+            <div id="proxyList" class="proxyList relative flex gap-2 flex-col justify-baseline items-center mb-2 w-full p-2 pl-2 pb-0 rounded-xl static">
+                <div id="spinnerProxy" class="spinner w-10 h-10 m-5"></div>
+            </div>
+
+        </div>
+
+        <div class="grid  gap-4 mb-8 text-white">
+            <button id="connectBtn"
+                class="bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-600 px-4 py-2 rounded-lg transition hover:cursor-pointer flex align-baseline">
+                Подключиться
+                <span class="ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+        <div id="modal"
+            class="hidden fixed inset-0 bg-black/30 bg-opacity-50 flex items-center justify-center z-50 transition">
+            <div class="bg-slate-50 rounded-lg p-6 max-w-md w-full mx-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modalTitle" class="text-xl font-semibold"></h3>
+                    <button id="closeModal"
+                        class="text-black-400 hover:text-black/50 hover:cursor-pointer text-2xl">&times;</button>
+                </div>
+                <p id="modalContent" class="text-black-300"></p>
+            </div>
+        </div>
+        <div id="notification" class="hidden fixed bottom-4 right-4 z-50 max-w-sm w-full">
+            <div id="notificationContent" class="p-4 rounded-lg shadow-lg border-l-4">
+              <div class="flex items-start">
+                <div class="ml-3">
+                  <p id="notificationText" class="text-sm font-medium"></p>
+                  <p id="notificationDescription" class="mt-1 text-sm"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+
+    <script>
+        /*
+        const modal = document.getElementById('modal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(title, content) {
+            modalTitle.textContent = title;
+            modalContent.textContent = content;
+            modal.classList.remove('hidden');
+        }
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        */
+        /*
+        document.getElementById('btn1').addEventListener('click', () => {
+            openModal('Кнопка 1', 'QR-CODE');
+        });*/
+    </script>
+    <script src="./src/js/fetch.js"></script>
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>
