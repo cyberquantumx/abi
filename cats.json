@@ -1,10 +1,5 @@
 [   
     {
-        "url": "tg://proxy?server=pivo.shukafish.ru&port=5443&secret=ddf5199e949c0f23bc887581218ad8c1e6",
-        "name": "Щука ",
-        "status": "unknown"
-    },
-    {
         "url": "tg://proxy?server=telegram.crocnet.ru&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet",
         "status": "online"
@@ -17,11 +12,6 @@
     {
         "url": "tg://proxy?server=92.53.65.32&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet IP 1",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=92.53.65.32&port=443&secret=dddb556b30e8aefc3443956f9a971bdcec",
-        "name": "Crocnet IP 1 Reserve",
         "status": "online"
     },
     {
