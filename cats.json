@@ -5,11 +5,6 @@
         "status": "online"
     },
     {
-        "url": "tg://proxy?server=telegram.crocnet.ru&port=443&secret=dddb556b30e8aefc3443956f9a971bdcec",
-        "name": "Crocnet Reserve",
-        "status": "online"
-    },
-    {
         "url": "tg://proxy?server=92.53.65.32&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet IP 1",
         "status": "online"
@@ -17,11 +12,6 @@
     {
         "url": "tg://proxy?server=95.213.143.212&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet IP 2",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=92.53.65.32&port=443&secret=dddb556b30e8aefc3443956f9a971bdcec",
-        "name": "Crocnet IP 2 Reserve",
         "status": "online"
     }
 ]
