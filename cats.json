@@ -13,5 +13,10 @@
         "url": "tg://proxy?server=95.213.143.212&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet IP 2",
         "status": "online"
+    },
+    {
+        "url": "https://t.me/proxy?server=tg.belka.network&port=443&secret=107cb7c1a3e23228d9e45226a2ac0785",
+        "name": "Belka VPN",
+        "status": "online"
     }
 ]
