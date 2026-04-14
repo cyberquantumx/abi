@@ -18,5 +18,136 @@
         "url": "tg://proxy?server=tg.belka.network&port=443&secret=107cb7c1a3e23228d9e45226a2ac0785",
         "name": "Belka VPN",
         "status": "online"
-    }
+    },
+    {
+        "url": "tg://proxy?server=de.mtproxy.me&port=443&secret=ee3f354f86e59e2c166c83031772d92d6379612e7275",
+        "name": "MTPROXY.ME DE",
+        "status": "unknown"
+    },
+    {
+        "url": "tg://proxy?server=ru.mtproxy.me&port=443&secret=ee3f354f86e59e2c166c83031772d92d6379612e7275",
+        "name": "MTPROXY.ME RU",
+        "status": "unknown"
+    },
+     
+    {
+        "url": "tg://proxy?server=185.119.58.137&port=52525&secret=dda3d05b71dceb6a361a79a9fa7183d3e8",
+        "name": "Дед VPN 2",
+        "status": "unknown"
+    },
+    {
+        "url": "tg://proxy?server=172.65.117.172&port=22&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 1",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=107.150.34.100&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 2",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=142.54.189.106&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 3",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=172.65.102.115&port=22&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 4",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=107.150.34.102&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 5",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=142.54.189.109&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 6",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=142.54.189.107&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 7",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=107.150.34.101&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 8",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=107.150.34.98&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 9",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=142.54.189.110&port=443&secret=ee09db815a6d82a31fda76f872230c69d7706b676275696c642e6f7267",
+        "name": "Proxy 10",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=zoomit.telbet.lol&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 11",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=own.telbet.lol&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 12",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=i.telbet.lol&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 13",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=how.telbet.lol&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 14",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=2A.telbet.lol&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 15",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=195.254.165.249&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 16",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=195.254.165.252&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 17",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=195.254.165.251&port=25565&secret=dd79e344818749bd7ac519130220c25d09",
+        "name": "Proxy 18",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=207.180.253.71&port=443&secret=eea136023cfd26d54332adf93ccca90960636c6f7564666c6172652e636f6d",
+        "name": "Proxy 19",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=178.104.98.160&port=443&secret=ee636c6f7564666c6172652e636f6db6",
+        "name": "Proxy 20",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=s3.neo-trading.org&port=443&secret=eec3fefd89a25d37ca3af1a602c7bfd8de79612e7275",
+        "name": "Proxy 21",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=rkn.tg&port=1337&secret=dda2d3fa639a6ddcf8d6d1c5913d001531",
+        "name": "Proxy 22",
+        "status": "unknown"
+      },
+      {
+        "url": "tg://proxy?server=mt2.firmvpn.ru&port=443&secret=ee2d237250cf23af15e706849ab9a0d5",
+        "name": "Proxy 23",
+        "status": "unknown"
+      }
 ]
