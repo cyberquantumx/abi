@@ -15,9 +15,14 @@
         "status": "online"
     },
     {
-        "url": "tg://proxy?server=193.124.129.191&port=443&secret=7lr3DJkethHZxOGKTb4rKUxsZW1hbmFwcm8ucnU",
-        "name": "Proxy 1",
+        "url": "tg://proxy?server=84.38.177.178&port=443&secret=eeda1ba92cc45b002a89406966588641fe62726f777365722e79616e6465782e636f6d",
+        "name": ".solutions",
         "status": "online"
+    },
+    {
+        "url": "tg://proxy?server=193.124.129.191&port=443&secret=7lr3DJkethHZxOGKTb4rKUxsZW1hbmFwcm8ucnU",
+        "name": "Proxy 1 (нестаб)",
+        "status": "unknown"
     },
     {
         "url": "tg://proxy?server=connect.tproxyru.live&port=8980&secret=ee104462821249bd7ac519130220c25d09617669746f2e7275",
