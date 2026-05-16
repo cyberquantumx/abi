@@ -6,18 +6,18 @@
   <title>Калькулятор ЗП</title>
   <style>
     :root {
-      --bg: #f5f5f5;
+      --bg: #f7f3f6;
       --card: #ffffff;
       --text: #172033;
       --muted: #697386;
-      --border: #dfe6f0;
+      --border: #eadde3;
       --accent: #d93f62;
       --accent-2: #a91f45;
       --soft-green: #fff0f4;
       --soft-yellow: #fff6d8;
       --soft-red: #fff0ee;
       --danger: #c0392b;
-      --shadow: 0 18px 50px rgba(22, 34, 51, 0.10);
+      --shadow: 0 18px 50px rgba(91, 24, 45, 0.10);
       --radius: 22px;
     }
 
@@ -29,13 +29,15 @@
       margin: 0;
       min-height: 100vh;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(217, 63, 98, 0.16), transparent 34%),
+        linear-gradient(180deg, #fff9fb 0%, var(--bg) 100%);
       color: var(--text);
-      padding: 24px;
+      padding: 12px;
     }
 
     .app {
-      width: min(1120px, 100%);
+      width: min(1320px, 100%);
       margin: 0 auto;
     }
 
@@ -43,22 +45,15 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 22px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .header h1 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(24px, 3vw, 34px);
       line-height: 1.05;
       letter-spacing: -0.04em;
-    }
-
-    .header p {
-      margin: 10px 0 0;
-      max-width: 740px;
-      color: var(--muted);
-      line-height: 1.5;
     }
 
     .badge {
@@ -76,13 +71,13 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 12px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(223, 230, 240, 0.9);
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(234, 221, 227, 0.92);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
       overflow: hidden;
@@ -90,56 +85,79 @@
     }
 
     .card-title {
-      padding: 20px 22px 14px;
+      padding: 12px 14px 9px;
       border-bottom: 1px solid var(--border);
     }
 
     .card-title h2 {
       margin: 0;
-      font-size: 20px;
+      font-size: 17px;
       letter-spacing: -0.02em;
     }
 
     .card-title span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 14px;
+      display: none;
     }
 
     .form {
-      padding: 22px;
+      padding: 12px;
       display: grid;
-      gap: 16px;
+      gap: 9px;
+    }
+
+    .section {
+      display: grid;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 240, 244, 0.45);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--accent-2);
+    }
+
+    .section-head small {
+      display: none;
     }
 
     .row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 9px;
+    }
+
+    .inline-control {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 7px;
     }
 
     label {
       display: grid;
-      gap: 7px;
+      gap: 4px;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .hint {
-      font-weight: 500;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
+      display: none;
     }
 
     input,
     select {
       width: 100%;
-      min-height: 48px;
+      min-height: 38px;
       border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 12px 14px;
+      border-radius: 12px;
+      padding: 8px 10px;
       background: #fff;
       color: var(--text);
       font: inherit;
@@ -157,8 +175,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      padding: 14px;
+      gap: 10px;
+      padding: 9px 10px;
       border: 1px solid var(--border);
       border-radius: 16px;
       background: #fff;
@@ -166,15 +184,11 @@
 
     .check strong {
       display: block;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .check span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
+      display: none;
     }
 
     .check input {
@@ -194,9 +208,9 @@
 
     button {
       border: 0;
-      border-radius: 16px;
-      min-height: 48px;
-      padding: 12px 18px;
+      border-radius: 13px;
+      min-height: 38px;
+      padding: 8px 14px;
       font: inherit;
       font-weight: 900;
       cursor: pointer;
@@ -215,23 +229,23 @@
     }
 
     .ghost {
-      background: #eef3f8;
+      background: #f1e8ed;
       color: var(--text);
     }
 
     .ghost:hover {
-      background: #e2eaf2;
+      background: #eadde3;
     }
 
     .result {
-      padding: 22px;
+      padding: 12px;
       display: grid;
-      gap: 14px;
+      gap: 9px;
     }
 
     .total {
-      padding: 22px;
-      border-radius: 20px;
+      padding: 14px;
+      border-radius: 16px;
       background: linear-gradient(135deg, var(--accent), #ff6f8d);
       color: #fff;
       box-shadow: 0 16px 32px rgba(217, 63, 98, 0.24);
@@ -246,24 +260,24 @@
 
     .total strong {
       display: block;
-      margin-top: 6px;
-      font-size: clamp(34px, 5vw, 52px);
+      margin-top: 5px;
+      font-size: clamp(28px, 4vw, 42px);
       letter-spacing: -0.05em;
       line-height: 1;
     }
 
     .breakdown {
       display: grid;
-      gap: 10px;
+      gap: 7px;
     }
 
     .item {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      gap: 10px;
       align-items: center;
-      padding: 13px 14px;
-      border-radius: 15px;
+      padding: 8px 10px;
+      border-radius: 12px;
       background: #fff;
       border: 1px solid var(--border);
     }
@@ -277,29 +291,40 @@
       color: var(--danger);
     }
 
+    .item.positive {
+      background: #fff0f4;
+      border-color: rgba(217, 63, 98, 0.20);
+    }
+
+    .item.positive b {
+      color: var(--accent-2);
+    }
+
     .item div:first-child {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12px;
       line-height: 1.35;
     }
 
     .item b {
-      font-size: 16px;
+      font-size: 13px;
       white-space: nowrap;
     }
 
     .note {
-      padding: 14px;
-      border-radius: 16px;
+      padding: 9px 10px;
+      border-radius: 12px;
       background: var(--soft-yellow);
       border: 1px solid rgba(197, 143, 0, 0.18);
       color: #6d5200;
-      font-size: 13px;
-      line-height: 1.45;
+      font-size: 11px;
+      line-height: 1.35;
+      max-height: 62px;
+      overflow: auto;
     }
 
     .table-wrap {
-      margin-top: 18px;
+      margin-top: 12px;
       overflow: auto;
       border-radius: var(--radius);
       border: 1px solid var(--border);
@@ -315,10 +340,10 @@
 
     th,
     td {
-      padding: 11px 12px;
+      padding: 7px 9px;
       border-bottom: 1px solid var(--border);
       text-align: right;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     th:first-child,
@@ -341,7 +366,7 @@
 
     @media (max-width: 860px) {
       body {
-        padding: 14px;
+        padding: 10px;
       }
 
       .header {
@@ -361,33 +386,44 @@
       .card-title,
       .form,
       .result {
-        padding: 18px;
+        padding: 12px;
+      }
+
+      .section-head {
+        display: grid;
+      }
+
+      .section-head small {
+        text-align: left;
       }
     }
   </style>
 </head>
 <body>
   <main class="app">
-    <header class="header">
-      <div>
-        <h1>Калькулятор ЗП</h1>
-      </div>
-      
+    <header class="header compact-header">
+      <h1>Калькулятор ЗП</h1>
     </header>
 
     <section class="grid">
       <div class="card">
         <div class="card-title">
           <h2>Данные для расчета</h2>
-          <span>Введи часы, категорию, ставку специалиста, стаж и депремирование.</span>
+          <span>Часы, категория, ставка специалиста, стаж, премии, депремы и бонусы Яндекса.</span>
         </div>
 
         <form class="form" id="salaryForm">
           <div class="row">
             <label>
-              Всего часов
-              <input id="hours" type="number" min="0" max="384" step="1" value="192" inputmode="numeric" />
-              <span class="hint">Таблица рассчитана до 384 часов. 1 смена = 12 часов.</span>
+              <span id="workAmountTitle">Всего часов</span>
+              <div class="inline-control">
+                <select id="timeInputMode">
+                  <option value="hours">Часы</option>
+                  <option value="shifts">Смены</option>
+                </select>
+                <input id="hours" type="number" min="0" max="384" step="1" value="192" inputmode="numeric" />
+              </div>
+              <span class="hint">Можно считать по часам или по количеству смен. 1 смена = 12 часов.</span>
             </label>
 
             <label>
@@ -421,18 +457,59 @@
 
           <div class="row">
             <label>
+              Премирование
+              <input id="manualBonus" type="number" min="0" step="1" value="0" inputmode="decimal" />
+              <span class="hint">Эта сумма будет добавлена к итоговой ЗП.</span>
+            </label>
+
+            <label>
               Депремирование / удержание
               <input id="penalty" type="number" min="0" step="1" value="0" inputmode="decimal" />
               <span class="hint">Эта сумма будет вычтена из итоговой ЗП.</span>
             </label>
+          </div>
 
-            <div class="check">
-              <div>
-                <strong>Добавлять премию за стаж</strong>
-                <span>Фиксированная месячная премия из таблицы стажа.</span>
-              </div>
-              <input id="includeSeniority" type="checkbox" checked />
+          <div class="row">
+            <label>
+              Расчетный месяц
+              <input id="calcMonth" type="month" />
+              <span class="hint">Для порога часов: февраль — 168 ч, декабрь — 179 ч, остальные месяцы — 180 ч.</span>
+            </label>
+
+            <label>
+              Сотрудников на ПВЗ
+              <input id="employeeCount" type="number" min="1" step="1" value="1" inputmode="numeric" />
+              <span class="hint">Бонус Яндекса делится на всех сотрудников, работающих на ПВЗ.</span>
+            </label>
+          </div>
+
+          <div class="section">
+            <div class="section-head">
+              <span>Бонусы Яндекса</span>
+              <small>Начисляются только при выполнении порога по количеству и часам</small>
             </div>
+
+            <div class="row">
+              <label>
+                Дропы Яндекс Маркет, шт.
+                <input id="ymDrops" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                <span class="hint">Формула: дропы × 30 ₽ × 10% / сотрудников. Минимум 500 шт./мес.</span>
+              </label>
+
+              <label>
+                Сумки Яндекс Еда, шт.
+                <input id="yeBags" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                <span class="hint">Формула: сумки × 150 ₽ × 10% / сотрудников. Минимум 80 шт./мес.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="check">
+            <div>
+              <strong>Добавлять премию за стаж</strong>
+              <span>Фиксированная месячная премия из таблицы стажа.</span>
+            </div>
+            <input id="includeSeniority" type="checkbox" checked />
           </div>
 
           <div class="actions">
@@ -462,6 +539,18 @@
             <div class="item">
               <div>Ставка специалиста</div>
               <b id="specialistRatePay">0 ₽</b>
+            </div>
+            <div class="item positive">
+              <div>Премирование</div>
+              <b id="manualBonusPay">0 ₽</b>
+            </div>
+            <div class="item positive">
+              <div>Бонус дропы ЯМ</div>
+              <b id="ymDropsPay">0 ₽</b>
+            </div>
+            <div class="item positive">
+              <div>Бонус сумки Яндекс Еда</div>
+              <b id="yeBagsPay">0 ₽</b>
             </div>
             <div class="item">
               <div>Стаж</div>
@@ -514,8 +603,21 @@
 
     const SPECIALIST_BASE_RATE_PER_HOUR = 20;
     const SHIFT_HOURS = 12;
+    const YANDEX_SHARE = 0.10;
 
-    // Таблица с картинки. shiftPay — стоимость конкретной смены, totalPay — накопленная ЗП.
+    const YANDEX_BONUSES = {
+      drops: {
+        name: "Дропы ЯМ",
+        tariff: 30,
+        minQty: 500
+      },
+      bags: {
+        name: "Сумки Яндекс Еда",
+        tariff: 150,
+        minQty: 80
+      }
+    };
+
     const SALARY_TABLE = [
       { shift: 1, hours: 12, cat2Shift: 1300.00, cat2Total: 1300.00, cat1Shift: 1300.00, cat1Total: 1300.00 },
       { shift: 2, hours: 24, cat2Shift: 1397.50, cat2Total: 2697.50, cat1Shift: 1502.31, cat1Total: 2802.00 },
@@ -567,15 +669,25 @@
     const els = {
       form: document.getElementById("salaryForm"),
       hours: document.getElementById("hours"),
+      timeInputMode: document.getElementById("timeInputMode"),
+      workAmountTitle: document.getElementById("workAmountTitle"),
       category: document.getElementById("category"),
       specialistMultiplier: document.getElementById("specialistMultiplier"),
       startDate: document.getElementById("startDate"),
+      manualBonus: document.getElementById("manualBonus"),
       penalty: document.getElementById("penalty"),
+      calcMonth: document.getElementById("calcMonth"),
+      employeeCount: document.getElementById("employeeCount"),
+      ymDrops: document.getElementById("ymDrops"),
+      yeBags: document.getElementById("yeBags"),
       includeSeniority: document.getElementById("includeSeniority"),
       resetBtn: document.getElementById("resetBtn"),
       totalPay: document.getElementById("totalPay"),
       basePay: document.getElementById("basePay"),
       specialistRatePay: document.getElementById("specialistRatePay"),
+      manualBonusPay: document.getElementById("manualBonusPay"),
+      ymDropsPay: document.getElementById("ymDropsPay"),
+      yeBagsPay: document.getElementById("yeBagsPay"),
       seniorityText: document.getElementById("seniorityText"),
       seniorityPay: document.getElementById("seniorityPay"),
       penaltyPay: document.getElementById("penaltyPay"),
@@ -593,6 +705,24 @@
       const month = String(date.getMonth() + 1).padStart(2, "0");
       const day = String(date.getDate()).padStart(2, "0");
       return `${year}-${month}-${day}`;
+    }
+
+    function toMonthInputValue(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      return `${year}-${month}`;
+    }
+
+    function getMonthIndexFromInput(monthValue) {
+      if (!monthValue) return new Date().getMonth();
+      const parts = monthValue.split("-");
+      return Math.max(0, Math.min(11, Number(parts[1]) - 1));
+    }
+
+    function getRequiredHoursByMonth(monthIndex) {
+      if (monthIndex === 1) return 168;
+      if (monthIndex === 11) return 179;
+      return 180;
     }
 
     function getCompletedMonths(startDate, endDate = new Date()) {
@@ -645,32 +775,111 @@
       };
     }
 
+    function calculateYandexBonus({ qty, tariff, minQty, employeeCount, hours, requiredHours }) {
+      const safeQty = Math.max(0, Number(qty) || 0);
+      const safeEmployees = Math.max(1, Math.floor(Number(employeeCount) || 1));
+      const pvzBonus = safeQty * tariff * YANDEX_SHARE;
+      const isQtyOk = safeQty >= minQty;
+      const isHoursOk = hours >= requiredHours;
+      const amount = isQtyOk && isHoursOk ? pvzBonus / safeEmployees : 0;
+
+      return {
+        amount,
+        pvzBonus,
+        isQtyOk,
+        isHoursOk,
+        qty: safeQty,
+        employeeCount: safeEmployees
+      };
+    }
+
+    function syncTimeInputMode() {
+      const isShifts = els.timeInputMode.value === "shifts";
+      els.workAmountTitle.textContent = isShifts ? "Кол-во смен" : "Всего часов";
+      els.hours.max = isShifts ? "32" : "384";
+      els.hours.step = "1";
+      els.hours.placeholder = isShifts ? "Напр. 16" : "Напр. 192";
+    }
+
+    let lastTimeInputMode = "hours";
+
+    function handleTimeInputModeChange() {
+      const currentValue = Math.max(0, Number(els.hours.value) || 0);
+      const nextMode = els.timeInputMode.value;
+
+      if (nextMode !== lastTimeInputMode) {
+        if (nextMode === "shifts") {
+          els.hours.value = Math.min(32, Math.round(currentValue / SHIFT_HOURS));
+        } else {
+          els.hours.value = Math.min(384, currentValue * SHIFT_HOURS);
+        }
+
+        lastTimeInputMode = nextMode;
+      }
+
+      syncTimeInputMode();
+      calculate();
+    }
+
+    function getInputHours() {
+      const value = Math.max(0, Number(els.hours.value) || 0);
+      return els.timeInputMode.value === "shifts" ? value * SHIFT_HOURS : value;
+    }
+
     function calculate() {
-      const inputHours = Number(els.hours.value) || 0;
+      syncTimeInputMode();
+      const inputHours = getInputHours();
       const hours = Math.max(0, Math.min(384, inputHours));
       const category = els.category.value;
       const specialistMultiplier = Number(els.specialistMultiplier.value) || 0;
       const startDate = els.startDate.value ? new Date(`${els.startDate.value}T00:00:00`) : null;
+      const manualBonus = Math.max(0, Number(els.manualBonus.value) || 0);
       const penalty = Math.max(0, Number(els.penalty.value) || 0);
+      const monthIndex = getMonthIndexFromInput(els.calcMonth.value);
+      const requiredHours = getRequiredHoursByMonth(monthIndex);
+      const employeeCount = Math.max(1, Math.floor(Number(els.employeeCount.value) || 1));
 
-      const base = getBasePayByHours(hours, category);
+      const base = getBasePayByHours(inputHours, category);
       const specialistRatePay = hours * SPECIALIST_BASE_RATE_PER_HOUR * specialistMultiplier;
 
       const seniorityMonths = getCompletedMonths(startDate);
       const seniority = getSeniorityBonus(seniorityMonths);
       const seniorityPay = els.includeSeniority.checked ? seniority.amount : 0;
 
-      const total = base.pay + specialistRatePay + seniorityPay - penalty;
+      const dropsBonus = calculateYandexBonus({
+        qty: els.ymDrops.value,
+        tariff: YANDEX_BONUSES.drops.tariff,
+        minQty: YANDEX_BONUSES.drops.minQty,
+        employeeCount,
+        hours,
+        requiredHours
+      });
+
+      const bagsBonus = calculateYandexBonus({
+        qty: els.yeBags.value,
+        tariff: YANDEX_BONUSES.bags.tariff,
+        minQty: YANDEX_BONUSES.bags.minQty,
+        employeeCount,
+        hours,
+        requiredHours
+      });
+
+      const total = base.pay + specialistRatePay + seniorityPay + manualBonus + dropsBonus.amount + bagsBonus.amount - penalty;
 
       els.totalPay.textContent = money(total);
       els.basePay.textContent = money(base.pay);
       els.specialistRatePay.textContent = money(specialistRatePay);
+      els.manualBonusPay.textContent = money(manualBonus);
+      els.ymDropsPay.textContent = money(dropsBonus.amount);
+      els.yeBagsPay.textContent = money(bagsBonus.amount);
       els.seniorityText.textContent = `${seniorityMonths} мес. / ${seniority.label}`;
       els.seniorityPay.textContent = money(seniorityPay);
       els.penaltyPay.textContent = `−${money(penalty)}`;
       els.shiftsText.textContent = `${base.fullShifts} смен` + (base.restHours ? ` + ${base.restHours} ч` : "");
 
       const notes = [];
+      notes.push(`Порог часов для бонусов Яндекса в выбранном месяце: ${requiredHours} ч.`);
+
       if (base.restHours) {
         notes.push(`Остаток ${base.restHours} ч посчитан по ставке ${money(base.usedHourly)} за час из следующей смены.`);
       }
@@ -683,13 +892,28 @@
       if (seniorityMonths >= 55) {
         notes.push("Для стажа 55+ месяцев применяется последняя премия из таблицы: 13 500 ₽.");
       }
+      if (manualBonus > 0) {
+        notes.push(`Премирование добавлено к итогу: ${money(manualBonus)}.`);
+      }
       if (penalty > 0) {
         notes.push(`Депремирование вычтено из итога: ${money(penalty)}.`);
       }
+      if (dropsBonus.qty > 0) {
+        if (dropsBonus.amount > 0) {
+          notes.push(`Дропы ЯМ: фонд ПВЗ ${money(dropsBonus.pvzBonus)}, на сотрудника ${money(dropsBonus.amount)} при делении на ${dropsBonus.employeeCount}.`);
+        } else {
+          notes.push(`Дропы ЯМ не начислены: нужно от ${YANDEX_BONUSES.drops.minQty} шт. и от ${requiredHours} ч.`);
+        }
+      }
+      if (bagsBonus.qty > 0) {
+        if (bagsBonus.amount > 0) {
+          notes.push(`Сумки Яндекс Еда: фонд ПВЗ ${money(bagsBonus.pvzBonus)}, на сотрудника ${money(bagsBonus.amount)} при делении на ${bagsBonus.employeeCount}.`);
+        } else {
+          notes.push(`Сумки Яндекс Еда не начислены: нужно от ${YANDEX_BONUSES.bags.minQty} шт. и от ${requiredHours} ч.`);
+        }
+      }
 
-      els.note.textContent = notes.length
-        ? notes.join(" ")
-        : "Расчет выполнен по таблице. 1 смена = 12 часов.";
+      els.note.textContent = notes.join(" ");
 
       renderSalaryTable(base.fullShifts + (base.restHours ? 1 : 0));
     }
@@ -715,12 +939,19 @@
       calculate();
     });
 
+    els.timeInputMode.addEventListener("change", handleTimeInputModeChange);
+
     [
       els.hours,
       els.category,
       els.specialistMultiplier,
       els.startDate,
+      els.manualBonus,
       els.penalty,
+      els.calcMonth,
+      els.employeeCount,
+      els.ymDrops,
+      els.yeBags,
       els.includeSeniority
     ].forEach(el => {
       el.addEventListener("input", calculate);
@@ -728,16 +959,25 @@
     });
 
     els.resetBtn.addEventListener("click", () => {
+      els.timeInputMode.value = "hours";
+      lastTimeInputMode = "hours";
       els.hours.value = 192;
       els.category.value = "cat1";
       els.specialistMultiplier.value = "0";
       els.startDate.value = toDateInputValue(new Date());
+      els.manualBonus.value = 0;
       els.penalty.value = 0;
+      els.calcMonth.value = toMonthInputValue(new Date());
+      els.employeeCount.value = 1;
+      els.ymDrops.value = 0;
+      els.yeBags.value = 0;
       els.includeSeniority.checked = true;
       calculate();
     });
 
     els.startDate.value = toDateInputValue(new Date());
+    els.calcMonth.value = toMonthInputValue(new Date());
+    syncTimeInputMode();
     renderSalaryTable();
     calculate();
   </script>
