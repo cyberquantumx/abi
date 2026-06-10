@@ -1,32 +1,7 @@
 [   
     {
-        "url": "tg://proxy?server=telegram.crocnet.ru&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
+        "url": "tg://proxy?server=main.crocnet.ru&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
         "name": "Crocnet",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=ru.telegram.crocnet.ru&port=443&secret=eedb556b30e8aefc3443956f9a971bdcec74656c656772616d2e63726f636e65742e7275",
-        "name": "Crocnet RU",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=mtproxy.neverspy.online&port=443&secret=dde8653d2faf392a302d829d79537abbe7",
-        "name": "NeverSpy",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=84.38.177.178&port=443&secret=eeda1ba92cc45b002a89406966588641fe62726f777365722e79616e6465782e636f6d",
-        "name": ".solutions",
-        "status": "online"
-    },
-    {
-        "url": "tg://proxy?server=193.124.129.191&port=443&secret=7lr3DJkethHZxOGKTb4rKUxsZW1hbmFwcm8ucnU",
-        "name": "Proxy 1 (нестаб)",
-        "status": "unknown"
-    },
-    {
-        "url": "tg://proxy?server=connect.tproxyru.live&port=8980&secret=ee104462821249bd7ac519130220c25d09617669746f2e7275",
-        "name": "Proxy 2",
         "status": "online"
     }
 ]
