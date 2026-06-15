@@ -5,29 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Подключение в Happ</title>
   <style>
+    :root { color-scheme: light dark; }
     body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; max-width: 680px; margin: 32px auto; padding: 0 16px; line-height: 1.45; }
-    code { word-break: break-all; background: #f2f2f2; padding: 10px; border-radius: 8px; display: block; }
-    button, a.button { display: inline-block; border: 0; border-radius: 10px; padding: 12px 16px; font-size: 16px; cursor: pointer; text-decoration: none; background: #111; color: #fff; }
+    code { word-break: break-all; background: rgba(127,127,127,.14); padding: 10px; border-radius: 8px; display: block; }
+    button, a.button { display: inline-block; border: 0; border-radius: 10px; padding: 12px 16px; font-size: 16px; cursor: pointer; text-decoration: none; background: #111; color: #fff; margin: 4px 0; }
+    .muted { opacity: .75; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; }
   </style>
 </head>
 <body>
   <h1>Подключение в Happ</h1>
   <p>Если Happ не открылся автоматически, нажми кнопку ниже.</p>
-  <p><a id="open" class="button" href="#">Открыть в Happ</a></p>
+
+  <p class="row">
+    <a id="open" class="button" href="#">Открыть в Happ</a>
+    <button id="copy" type="button">Скопировать подписку</button>
+  </p>
+
   <p>Обычная ссылка подписки:</p>
   <code id="sub"></code>
 
+  <p class="muted">Deep-link:</p>
+  <code id="deeplink"></code>
+
   <script>
     const params = new URLSearchParams(location.search);
-    const subUrl = params.get('url') || '';
-    const happUrl = subUrl ? `happ://add/${encodeURIComponent(subUrl)}` : '';
+    const subUrl = (params.get('url') || '').trim();
 
-    document.getElementById('sub').textContent = subUrl || 'Ссылка не передана';
+    // ВАЖНО: url в параметре страницы уже должен быть encoded через encodeURIComponent.
+    // URLSearchParams.get() возвращает уже декодированную нормальную ссылку.
+    // Для Happ передаём ссылку RAW, без повторного encodeURIComponent:
+    // happ://add/https://example.com/abi/subId
+    const happUrl = subUrl ? `happ://add/${subUrl}` : '';
+
+    const subEl = document.getElementById('sub');
+    const deepEl = document.getElementById('deeplink');
     const open = document.getElementById('open');
+    const copy = document.getElementById('copy');
+
+    subEl.textContent = subUrl || 'Ссылка не передана';
+    deepEl.textContent = happUrl || 'Deep-link не собран';
     open.href = happUrl || '#';
 
+    copy.addEventListener('click', async () => {
+      if (!subUrl) return;
+      try {
+        await navigator.clipboard.writeText(subUrl);
+        copy.textContent = 'Скопировано';
+      } catch (e) {
+        copy.textContent = 'Скопируй вручную ниже';
+      }
+    });
+
     if (happUrl) {
-      setTimeout(() => { location.href = happUrl; }, 250);
+      setTimeout(() => { location.href = happUrl; }, 350);
     }
   </script>
 </body>
